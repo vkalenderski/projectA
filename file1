@@ -1,0 +1,59 @@
+<# This form was created using POSHGUI.com  a free online gui designer for PowerShell
+.NAME
+    Untitled
+#>
+
+Add-Type -AssemblyName System.Windows.Forms
+[System.Windows.Forms.Application]::EnableVisualStyles()
+
+#region begin GUI{ 
+
+$Form                            = New-Object system.Windows.Forms.Form
+$Form.ClientSize                 = '400,400'
+$Form.text                       = "Form"
+$Form.TopMost                    = $false
+
+$CheckBox1                       = New-Object system.Windows.Forms.CheckBox
+$CheckBox1.text                  = "checkBox"
+$CheckBox1.AutoSize              = $false
+$CheckBox1.width                 = 95
+$CheckBox1.height                = 20
+$CheckBox1.location              = New-Object System.Drawing.Point(217,38)
+$CheckBox1.Font                  = 'Microsoft Sans Serif,10'
+
+$ComboBox1                       = New-Object system.Windows.Forms.ComboBox
+$ComboBox1.text                  = "comboBox"
+$ComboBox1.width                 = 100
+$ComboBox1.height                = 20
+$ComboBox1.location              = New-Object System.Drawing.Point(138,78)
+$ComboBox1.Font                  = 'Microsoft Sans Serif,10'
+
+$ProgressBar1                    = New-Object system.Windows.Forms.ProgressBar
+$ProgressBar1.width              = 200
+$ProgressBar1.height             = 60
+$ProgressBar1.location           = New-Object System.Drawing.Point(89,-10)
+
+$Button1                         = New-Object system.Windows.Forms.Button
+$Button1.text                    = "button"
+$Button1.width                   = 60
+$Button1.height                  = 30
+$Button1.location                = New-Object System.Drawing.Point(158,148)
+$Button1.Font                    = 'Microsoft Sans Serif,10'
+
+$PictureBox1                     = New-Object system.Windows.Forms.PictureBox
+$PictureBox1.width               = 60
+$PictureBox1.height              = 30
+$PictureBox1.location            = New-Object System.Drawing.Point(157,216)
+$PictureBox1.imageLocation       = "undefined"
+$PictureBox1.SizeMode            = [System.Windows.Forms.PictureBoxSizeMode]::zoom
+$Form.controls.AddRange(@($CheckBox1,$ComboBox1,$ProgressBar1,$Button1,$PictureBox1))
+
+#region gui events {
+#endregion events }
+
+#endregion GUI }
+
+
+#Write your logic code here
+
+[void]$Form.ShowDialog()
